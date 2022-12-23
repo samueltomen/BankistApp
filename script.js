@@ -84,6 +84,7 @@ for (const movement of movements) {
 }
 
 // FOR EACH METHOD
+// BREAK & CONTINUE impossible dans le forEach()
 movements.forEach(function (transaction, i, arr) {
     transaction > 0
         ? console.log(`Transaction ${i + 1} : Vous avez déposer ${transaction}`)
