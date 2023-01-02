@@ -60,14 +60,23 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements) {
-    movements.forEach(function (mov, i) {
+    
+    // innerHTML est utilisé comme Setter il remplace tous le contenu par une chaine de charactere vide
+    containerMovements.innerHTML = '';
+    // .textContent = 0
 
-        const type = mov > 0 ? 'deposit' : 'withdrawl' 
+    // For Each est le GETTER
+    movements.forEach(function (mov, i) {
+        const type = mov > 0 ? 'deposit' : 'withdrawal';
         const html = `<div class="movements__row">
-        <div class="movements__type movements__type--${type}">${i + 1}${type}</div>
+        <div class="movements__type movements__type--${type}">${
+            i + 1
+        } ${type}</div>
         <div class="movements__value">${mov}</div>
       </div>
       `;
+        // Ajoute le contenu html de la variable 'html' à chaque nouvelle entrée dans le tableau 
+        containerMovements.insertAdjacentHTML('afterbegin', html);
     });
 };
 
