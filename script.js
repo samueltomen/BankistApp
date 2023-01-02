@@ -81,6 +81,14 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const user = 'Steven Thomas Williams'; //stw
+const username = user
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('')
+console.log(username);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -107,12 +115,12 @@ const movementUSD1 = movements.map(function (mov) {
 // Fonction fleché de movementsUSD1
 const movementUSD2 = movements.map((mov) => mov * eurToUsd);
 
-const movementsDescriptions =  movements.map((mov,i) => {
-    if (mov > 0){
-        return `Mouvement ${i+1}: Vous avez déposer ${mov}`;
-    }else{
-        return `Mouvement ${i+1}: Vous avez retirer ${Math.abs(mov)}`;
+const movementsDescriptions = movements.map((mov, i) => {
+    if (mov > 0) {
+        return `Mouvement ${i + 1}: Vous avez déposer ${mov}`;
+    } else {
+        return `Mouvement ${i + 1}: Vous avez retirer ${Math.abs(mov)}`;
     }
-})
+});
 
 console.log(movementsDescriptions);
