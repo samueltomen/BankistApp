@@ -168,5 +168,5 @@ const balance = movements.reduce(function (accumulateur, current) {
 // Valeur initiale de l'accumulateur : premier élément du tableau de mouvements (movements[0]).
 const max = movements.reduce((acc, mov) => Math.max(acc, mov), movements[0]);
 
-// #Coding Challenge 
+// #2 Coding Challenge 
 
