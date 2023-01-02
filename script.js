@@ -78,8 +78,20 @@ const displayMovements = function (movements) {
         containerMovements.insertAdjacentHTML('afterbegin', html);
     });
 };
-
 displayMovements(account1.movements);
+
+// Cette fonction calcule et affiche le solde final en utilisant la méthode reduce() sur le tableau de mouvements.
+// Valeur initiale de l'accumulateur : 0.
+// Le solde final est affiché dans le label de solde (labelBalance).
+const calcDisplayBalance = function (movements) {
+    const balance = movements.reduce(
+        (accumulateur, mov) => accumulateur + mov,
+        0
+    );
+    labelBalance.textContent = `${balance} EUR `;
+};
+calcDisplayBalance(account1.movements);
+
 
 const createUsernames = function (accs) {
     accs.forEach(function (acc) {
@@ -95,6 +107,7 @@ const createUsernames = function (accs) {
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
+// COURS
 
 const currencies = new Map([
     ['USD', 'United States dollar'],
@@ -136,6 +149,24 @@ const withdrawals = movements.filter(function (mov) {
 });
 
 // REDUCE METHOD //
+// Calcul du solde final en utilisant la méthode reduce() sur le tableau de mouvements.
+// Valeur initiale de l'accumulateur fournie en deuxième argument de reduce() : 0
+const balance = movements.reduce(function (accumulateur, current) {
+    return accumulateur + current;
+}, 0);
+
+// Valeur Maximum
+
+// Version plus détaillé 
+// const max = movements.reduce((acc, mov) => {
+//     if (acc > mov) return acc;
+//     else return mov;
+// },movements[0]);
 
 
+// Cette fonction trouve la valeur la plus élevée du tableau de mouvements en utilisant la méthode reduce() et Math.max().
+// Valeur initiale de l'accumulateur : premier élément du tableau de mouvements (movements[0]).
+const max = movements.reduce((acc, mov) => Math.max(acc, mov), movements[0]);
+
+// #Coding Challenge 
 
