@@ -95,7 +95,6 @@ const createUsernames = function (accs) {
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// LECTURES
 
 const currencies = new Map([
     ['USD', 'United States dollar'],
@@ -103,22 +102,21 @@ const currencies = new Map([
     ['GBP', 'Pound sterling'],
 ]);
 
+// Déclare un tableau contenant différents mouvements d'argent
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-////////////////////////////////////////////////
-
-// Conversion des Euro en Dollars
-// La methode map permet de creer un nouveau tableau avec les nouveaux elements
+// Déclare un taux de conversion de l'euro en dollar
 const eurToUsd = 1.07;
 
-// Fonction de conversion
+// Convertit chaque montant dans le tableau "movements" en dollar en utilisant la fonction "map"
 const movementUSD1 = movements.map(function (mov) {
     return mov * eurToUsd;
 });
 
-// Fonction fleché de movementsUSD1
+// Convertit chaque montant dans le tableau "movements" en dollar en utilisant l'expression de fonction fléchée et la variable "eurToUsd"
 const movementUSD2 = movements.map((mov) => mov * eurToUsd);
 
+// Crée un tableau de chaînes de caractères décrivant chaque mouvement en utilisant la fonction "map" et en testant si le mouvement est positif ou négatif
 const movementsDescriptions = movements.map((mov, i) => {
     if (mov > 0) {
         return `Mouvement ${i + 1}: Vous avez déposer ${mov}`;
@@ -127,18 +125,17 @@ const movementsDescriptions = movements.map((mov, i) => {
     }
 });
 
-// console.log(movementsDescriptions);
+// Crée un tableau contenant uniquement les mouvements positifs du tableau "movements" en utilisant la fonction "filter"
+const deposits = movements.filter(function (mov) {
+    return mov > 0;
+});
 
-const deposits =  movements.filter(function(mov){
-    return mov > 0
-})
-
-const withdrawals = movements.filter(function(mov){
+// Crée un tableau contenant uniquement les mouvements négatifs ou nuls du tableau "movements" en utilisant la fonction "filter"
+const withdrawals = movements.filter(function (mov) {
     return mov <= 0;
-})
+});
 
-// // Methode For Of
-// const depositsFor = [] 
-// for(const mov of movements) if (mov>0) depositsFor.push(mov)
-// console.log(depositsFor);
+// REDUCE METHOD //
+
+
 
