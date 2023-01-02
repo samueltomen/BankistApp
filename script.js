@@ -60,7 +60,7 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements) {
-    
+
     // innerHTML est utilisé comme Setter il remplace tous le contenu par une chaine de charactere vide
     containerMovements.innerHTML = '';
     // .textContent = 0
@@ -95,3 +95,5 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 ////////////////////////////////////////////////
+
+

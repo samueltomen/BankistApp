@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // // FOR OF METHOD
 // for (const movement of movements) {
@@ -21,8 +21,6 @@
 //               )}`
 //           );
 // });
-
-
 
 // CES 2 METHODE AFFICHES
 // 0: function(200)
@@ -66,3 +64,26 @@
 // // JOIN
 // // ==> Affiche a - n - m - l - k - j
 // console.log(letters.join(' - '));
+
+// Coding Challenge #1
+
+let juliaArr = [3, 5, 2, 12, 7];
+let juliaArr2 = [3, 5, 2, 12, 7];
+let kateArr = [4, 1, 15, 8, 3];
+juliaArr2 = juliaArr2.slice(1, 4);
+console.log(juliaArr2);
+let arrBoth = juliaArr2.concat(kateArr);
+console.log(arrBoth);
+
+function checkDogs(arrDogs) {
+    arrDogs.forEach(function (dogs, i) {
+        const dogsAge =
+            dogs >= 3
+                ? console.log(
+                      `Dog ${i + 1} is an adult, and is ${dogs} years old`
+                  )
+                : console.log(`Dog number ${i + 1} is still a puppy`);
+    });
+}
+
+checkDogs(arrBoth);
