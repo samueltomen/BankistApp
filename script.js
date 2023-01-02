@@ -92,7 +92,6 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
-
 const createUsernames = function (accs) {
     accs.forEach(function (acc) {
         acc.username = acc.owner
@@ -157,16 +156,42 @@ const balance = movements.reduce(function (accumulateur, current) {
 
 // Valeur Maximum
 
-// Version plus détaillé 
+// Version plus détaillé
 // const max = movements.reduce((acc, mov) => {
 //     if (acc > mov) return acc;
 //     else return mov;
 // },movements[0]);
 
-
 // Cette fonction trouve la valeur la plus élevée du tableau de mouvements en utilisant la méthode reduce() et Math.max().
 // Valeur initiale de l'accumulateur : premier élément du tableau de mouvements (movements[0]).
 const max = movements.reduce((acc, mov) => Math.max(acc, mov), movements[0]);
 
-// #2 Coding Challenge 
+// #2 Coding Challenge
 
+function calcAverageHumanAge(ages) {
+    // Utilise la méthode map pour convertir les âges des chiens en âges humains
+    const humanAges = ages
+        .map((age) => {
+            // Calcule l'âge humain du chien
+            let humanAge = age <= 2 ? 2 * age : 16 + age * 4;
+            return humanAge;
+        })
+        .filter((age) => {
+            // Utilise la méthode filter pour exclure tous les chiens de moins de 18 ans en âge humain
+            return age >= 18;
+        });
+
+    // Utilise la méthode reduce pour calculer la somme des âges humains
+    const sum = humanAges.reduce((a, b) => a + b, 0);
+
+    // Calcule la moyenne des âges humains
+    return sum / humanAges.length;
+}
+
+// Test avec les données 1
+const data1 = [5, 2, 4, 1, 15, 8, 3];
+console.log(calcAverageHumanAge(data1));
+
+// Test avec les données 2
+const data2 = [16, 6, 10, 5, 6, 1, 4];
+console.log(calcAverageHumanAge(data2));
