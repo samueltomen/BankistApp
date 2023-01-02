@@ -60,7 +60,6 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements) {
-
     // innerHTML est utilisé comme Setter il remplace tous le contenu par une chaine de charactere vide
     containerMovements.innerHTML = '';
     // .textContent = 0
@@ -75,7 +74,7 @@ const displayMovements = function (movements) {
         <div class="movements__value">${mov}</div>
       </div>
       `;
-        // Ajoute le contenu html de la variable 'html' à chaque nouvelle entrée dans le tableau 
+        // Ajoute le contenu html de la variable 'html' à chaque nouvelle entrée dans le tableau
         containerMovements.insertAdjacentHTML('afterbegin', html);
     });
 };
@@ -96,4 +95,24 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 ////////////////////////////////////////////////
 
+// Conversion des Euro en Dollars
+// La methode map permet de creer un nouveau tableau avec les nouveaux elements
+const eurToUsd = 1.07;
 
+// Fonction de conversion
+const movementUSD1 = movements.map(function (mov) {
+    return mov * eurToUsd;
+});
+
+// Fonction fleché de movementsUSD1
+const movementUSD2 = movements.map((mov) => mov * eurToUsd);
+
+const movementsDescriptions =  movements.map((mov,i) => {
+    if (mov > 0){
+        return `Mouvement ${i+1}: Vous avez déposer ${mov}`;
+    }else{
+        return `Mouvement ${i+1}: Vous avez retirer ${Math.abs(mov)}`;
+    }
+})
+
+console.log(movementsDescriptions);
