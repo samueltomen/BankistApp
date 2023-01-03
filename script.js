@@ -168,30 +168,32 @@ const max = movements.reduce((acc, mov) => Math.max(acc, mov), movements[0]);
 
 // #2 Coding Challenge
 
-function calcAverageHumanAge(ages) {
-    // Utilise la méthode map pour convertir les âges des chiens en âges humains
-    const humanAges = ages
-        .map((age) => {
-            // Calcule l'âge humain du chien
-            let humanAge = age <= 2 ? 2 * age : 16 + age * 4;
-            return humanAge;
-        })
-        .filter((age) => {
-            // Utilise la méthode filter pour exclure tous les chiens de moins de 18 ans en âge humain
-            return age >= 18;
-        });
+// function calcAverageHumanAge(ages) {
+//     // Utilise la méthode map pour convertir les âges des chiens en âges humains
+//     const humanAges = ages
+//         .map((age) => {
+//             // Calcule l'âge humain du chien
+//             let humanAge = age <= 2 ? 2 * age : 16 + age * 4;
+//             return humanAge;
+//         })
+//         .filter((age) => {
+//             // Utilise la méthode filter pour exclure tous les chiens de moins de 18 ans en âge humain
+//             return age >= 18;
+//         });
 
-    // Utilise la méthode reduce pour calculer la somme des âges humains
-    const sum = humanAges.reduce((a, b) => a + b, 0);
+//     // Utilise la méthode reduce pour calculer la somme des âges humains
+//     const sum = humanAges.reduce((a, b) => a + b, 0);
 
-    // Calcule la moyenne des âges humains
-    return sum / humanAges.length;
-}
+//     // Calcule la moyenne des âges humains
+//     return sum / humanAges.length;
+// }
 
-// Test avec les données 1
-const data1 = [5, 2, 4, 1, 15, 8, 3];
-console.log(calcAverageHumanAge(data1));
+// // Test avec les données 1
+// const data1 = [5, 2, 4, 1, 15, 8, 3];
+// console.log(calcAverageHumanAge(data1));
 
-// Test avec les données 2
-const data2 = [16, 6, 10, 5, 6, 1, 4];
-console.log(calcAverageHumanAge(data2));
+// // Test avec les données 2
+// const data2 = [16, 6, 10, 5, 6, 1, 4];
+// console.log(calcAverageHumanAge(data2));
+
+
